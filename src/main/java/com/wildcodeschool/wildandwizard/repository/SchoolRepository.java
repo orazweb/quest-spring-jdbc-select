@@ -49,6 +49,10 @@ public class SchoolRepository {
         } catch (
                 SQLException e) {
             e.printStackTrace();
+        }finally {
+            JdbcUtils.closeResultSet(resultSet);
+            JdbcUtils.closeStatement(statement);
+            JdbcUtils.closeConnection(connection);
         }
         return null;
 
